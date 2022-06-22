@@ -48,7 +48,7 @@ struct TweetRowView: View {
                 
             }
             .font(.system(size: 25))
-            .foregroundColor(.gray)
+            .foregroundColor(.blue)
             Divider()
         }
         .padding()
