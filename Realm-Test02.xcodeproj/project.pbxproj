@@ -17,6 +17,7 @@
 		78921C962861F0C20034ECA0 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78921C952861F0C20034ECA0 /* City.swift */; };
 		78D805652862DEAA00B5FE91 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D805642862DEAA00B5FE91 /* FeedView.swift */; };
 		78D805682862DFC600B5FE91 /* TweetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D805672862DFC600B5FE91 /* TweetRowView.swift */; };
+		78D8056B2862E6CE00B5FE91 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8056A2862E6CE00B5FE91 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		78921C952861F0C20034ECA0 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		78D805642862DEAA00B5FE91 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		78D805672862DFC600B5FE91 /* TweetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetRowView.swift; sourceTree = "<group>"; };
+		78D8056A2862E6CE00B5FE91 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		78D8055F2862DE6600B5FE91 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				78D805692862E6C400B5FE91 /* MainTab */,
 				78D805612862DE7F00B5FE91 /* Components */,
 				78D805602862DE7500B5FE91 /* Feed */,
 			);
@@ -137,6 +140,14 @@
 				78D805672862DFC600B5FE91 /* TweetRowView.swift */,
 			);
 			path = Tweets;
+			sourceTree = "<group>";
+		};
+		78D805692862E6C400B5FE91 /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				78D8056A2862E6CE00B5FE91 /* MainTabView.swift */,
+			);
+			path = MainTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 				78921C832861EED50034ECA0 /* ContentView.swift in Sources */,
 				78921C942861F06F0034ECA0 /* Country.swift in Sources */,
 				78921C962861F0C20034ECA0 /* City.swift in Sources */,
+				78D8056B2862E6CE00B5FE91 /* MainTabView.swift in Sources */,
 				78921C812861EED50034ECA0 /* Realm_Test02App.swift in Sources */,
 				78D805682862DFC600B5FE91 /* TweetRowView.swift in Sources */,
 			);

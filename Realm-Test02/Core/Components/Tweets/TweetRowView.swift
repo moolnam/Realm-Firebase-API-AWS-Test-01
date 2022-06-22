@@ -21,6 +21,7 @@ struct TweetRowView: View {
                         Text("06/22/14:43")
                             .foregroundColor(.secondary)
                     }
+                    .padding(.bottom, 5)
                     Text("안녕하세요 물질하는 남자")
                 }
                 Spacer()
@@ -47,7 +48,7 @@ struct TweetRowView: View {
                 
             }
             .font(.system(size: 25))
-            .foregroundColor(.blue)
+            .foregroundColor(.gray)
             Divider()
         }
         .padding()
