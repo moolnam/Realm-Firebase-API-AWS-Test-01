@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ContentView: View {
+    
+    @ObservedResults(Country.self) var country
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Text(country.description)
     }
 }
 
