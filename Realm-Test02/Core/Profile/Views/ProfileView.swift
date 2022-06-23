@@ -8,16 +8,28 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @State var selectedFilter: TweetFilterViewModel = .tweets
+    @Namespace var animation
+    @Environment(\.presentationMode) var mode
+    
     var body: some View {
-        headerView
-        
-        Spacer()
+        VStack(alignment: .leading) {
+            headerView
+            
+            tweetFilterBar
+            
+            tweetView
+            
+            Spacer()
+        }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            .previewLayout(.sizeThatFits)
     }
 }
 
@@ -25,16 +37,25 @@ extension ProfileView {
     var headerView: some View {
         VStack {
             ZStack(alignment: .bottomLeading) {
-                Color.blue
+                Color.blue.opacity(0.5)
                 Image(systemName: "person.circle.fill")
                     .background(.green)
                     .cornerRadius(20)
                     .foregroundColor(.white)
                     .font(.system(size: 100))
                     .offset(x: 30, y: 50)
+                VStack(alignment: .trailing) {
+                    Button(action: {
+                        mode.wrappedValue.dismiss()
+                    }, label: {
+                        Image(systemName: "arrow.backward.square.fill")
+                            .foregroundColor(.white)
+                            .font(.system(size: 40))
+                    })
+                }
             }
             .ignoresSafeArea(.all)
-            .frame(height: 150)
+            .frame(height: 120)
             
             VStack(alignment: .leading) {
                 HStack {
@@ -44,15 +65,13 @@ extension ProfileView {
                     })
                     Button(action: {}, label: {
                         Text("프로필 편집")
-                            .foregroundColor(.white)
+                            .foregroundColor(.green)
                             .padding(5)
-                            .background(.blue)
-                            .cornerRadius(10)
+                            .cornerRadius(5)
                     })
                 }
-                .padding()
                 .foregroundColor(.green)
-                .font(.system(size: 30))
+                .font(.system(size: 20))
                 VStack(alignment: .leading) {
                     Text("MOOL MAN")
                         .font(.title)
@@ -62,7 +81,7 @@ extension ProfileView {
                         .foregroundColor(.secondary)
                     Text("자기소개")
                         .font(.subheadline)
-                        .padding(.vertical, 10)
+                        .padding(.top, 10)
                     HStack {
                         Spacer()
                         HStack {
@@ -79,26 +98,54 @@ extension ProfileView {
                             }
                         })
                     }
-                    .padding()
-                    HStack {
-                        HStack {
-                            Text("232")
-                            Text("팔로잉")
-                                .foregroundColor(.secondary)
-                        }
-                        HStack {
-                            Text("214")
-                            Text("팔로워")
-                                .foregroundColor(.secondary)
-                        }
-                    }
+                    .padding(.bottom, 10)
+                    UserStateView()
                     .font(.title2)
                 }
                 .font(.system(size: 25))
                 .padding()
             }
-            
-            Spacer()
+        }
+    }
+    
+    var tweetFilterBar: some View {
+        HStack {
+            ForEach(TweetFilterViewModel.allCases, id: \.rawValue) { item in
+                VStack {
+                    Text(item.title)
+                        .font(.subheadline)
+                        .fontWeight(selectedFilter == item ? .bold : .regular)
+                        .foregroundColor(selectedFilter == item ? .black : .secondary)
+                    
+                    if selectedFilter == item {
+                        Capsule()
+                            .frame(height: 5)
+                            .foregroundColor(.blue)
+                            .matchedGeometryEffect(id: "filter", in: animation)
+                    }
+                    else {
+                        Capsule()
+                            .frame(height: 5)
+                            .foregroundColor(.clear)
+                    }
+                }
+                .onTapGesture {
+                    withAnimation(.easeInOut) {
+                        self.selectedFilter = item
+                    }
+                }
+            }
+        }
+        .overlay(Divider().offset(x: 0, y: 18))
+    }
+    
+    var tweetView: some View {
+        ScrollView {
+            LazyVStack {
+                ForEach(0...9, id: \.self) { item in
+                    TweetRowView()
+                }
+            }
         }
     }
 }

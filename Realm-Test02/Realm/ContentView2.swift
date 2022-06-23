@@ -8,7 +8,7 @@
 import SwiftUI
 import RealmSwift
 
-struct ContentView: View {
+struct ContentView2: View {
     
     @ObservedResults(Country.self) var country
     
@@ -17,8 +17,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ContentView2_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView2()
     }
 }
