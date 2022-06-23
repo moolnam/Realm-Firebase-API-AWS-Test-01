@@ -26,6 +26,7 @@ struct ContentView: View {
                         isShowMenu = false
                     }
                 }
+                .ignoresSafeArea(.all)
             }
             
             SideMenuView()
@@ -45,6 +46,9 @@ struct ContentView: View {
             })
             
         })
+        .onAppear() {
+            isShowMenu = false
+        }
     }
 }
 

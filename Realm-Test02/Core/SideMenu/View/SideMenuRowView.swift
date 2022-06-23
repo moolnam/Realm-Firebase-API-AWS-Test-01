@@ -8,15 +8,21 @@
 import SwiftUI
 
 struct SideMenuRowView: View {
+    
+    let viewModel: SideMenuViewModel
+    
     var body: some View {
         HStack {
-            Image(systemName: "")
+            Image(systemName: viewModel.imageName)
+            Text(viewModel.description)
         }
+        .font(.system(size: 20))
+        .padding()
     }
 }
 
 struct SideMenuRowView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuRowView()
+        SideMenuRowView(viewModel: .profile)
     }
 }

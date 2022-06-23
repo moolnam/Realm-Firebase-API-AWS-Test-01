@@ -48,12 +48,37 @@ extension SideMenuView {
     var sideMenuButtom: some View {
         VStack(alignment: .leading) {
             ForEach(SideMenuViewModel.allCases, id: \.rawValue) { item in
-                HStack {
-                    Image(systemName: item.imageName)
-                    Text(item.description)
+                if item == .profile {
+                    NavigationLink {
+                        ProfileView()
+                    } label: {
+                        SideMenuRowView(viewModel: item)
+                    }
                 }
-                .font(.system(size: 20))
-                .padding()
+                else if item == .lists {
+                    NavigationLink {
+                        
+                    } label: {
+                        SideMenuRowView(viewModel: item)
+                    }
+                }
+                else if item == .bookmarks {
+                    NavigationLink {
+                        
+                    } label: {
+                        SideMenuRowView(viewModel: item)
+                    }
+                }
+                else if item == .logout {
+                    NavigationLink {
+                        
+                    } label: {
+                        SideMenuRowView(viewModel: item)
+                    }
+                }
+                else {
+                    SideMenuRowView(viewModel: item)
+                }
             }
         }
     }
