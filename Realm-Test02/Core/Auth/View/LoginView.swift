@@ -9,25 +9,24 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @State var email = ""
-    @State var password = ""
+    @State private var email = ""
+    @State private var password = ""
     
     var body: some View {
         VStack {
             VStack {
-                Text("안녕하세요.\n반갑습니다.")
-                    .font(.system(size: 50))
-                    .foregroundColor(.white)
+                AuthHeaderView(title1: "로그인 화면", title2: "반갑습니다")
             }
             .frame(width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.height / 4)
             .background(.blue)
-            
+            .padding()
             VStack {
                 VStack {
-                    TextField("이메일", text: $email)
-                    TextField("비밀번호", text: $password)
+                    CustomInputField(text: $email, imageName: "envelope", placeholderText: "이메일")
+                        
+                    CustomInputField(text: $password, imageName: "lock", placeholderText: "비밀번호")
+//                    TextField("비밀번호", text: $password)
                 }
-                .padding()
                 HStack {
                     Spacer()
                     NavigationLink {
@@ -47,15 +46,20 @@ struct LoginView: View {
                 .background(.blue)
                 .cornerRadius(20)
                 Spacer()
-                Button(action: {}, label: {
-                    Text("계정 만들기")
-                })
+                NavigationLink {
+                    RegistrationView()
+                        .navigationBarHidden(true)
+                } label: {
+                    Text("회원가입")
+                        .foregroundColor(.blue)
+                }
             }
             .padding()
             .font(.system(size: 30))
             
             Spacer()
         }
+        .navigationBarHidden(true)
     }
 }
 

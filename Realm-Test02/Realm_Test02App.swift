@@ -12,7 +12,7 @@ struct Realm_Test02App: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                LoginView()
             }
 //                .onAppear() {
 //                    print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.path)
