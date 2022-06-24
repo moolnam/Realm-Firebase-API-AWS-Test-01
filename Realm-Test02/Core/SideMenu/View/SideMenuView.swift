@@ -70,11 +70,11 @@ extension SideMenuView {
                     }
                 }
                 else if item == .logout {
-                    NavigationLink {
-                        
-                    } label: {
+                    Button(action: {
+                        print("로그아웃 버튼 누름")
+                    }, label: {
                         SideMenuRowView(viewModel: item)
-                    }
+                    })
                 }
                 else {
                     SideMenuRowView(viewModel: item)

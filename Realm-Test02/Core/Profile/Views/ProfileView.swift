@@ -11,7 +11,7 @@ struct ProfileView: View {
     
     @State var selectedFilter: TweetFilterViewModel = .tweets
     @Namespace var animation
-    @Environment(\.presentationMode) var mode
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -46,7 +46,7 @@ extension ProfileView {
                     .offset(x: 30, y: 50)
                 VStack(alignment: .trailing) {
                     Button(action: {
-                        mode.wrappedValue.dismiss()
+                        dismiss()
                     }, label: {
                         Image(systemName: "arrow.backward.square.fill")
                             .foregroundColor(.white)
