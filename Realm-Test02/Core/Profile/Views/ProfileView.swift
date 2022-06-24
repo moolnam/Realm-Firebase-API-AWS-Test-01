@@ -44,15 +44,15 @@ extension ProfileView {
                     .foregroundColor(.white)
                     .font(.system(size: 100))
                     .offset(x: 30, y: 50)
-                VStack(alignment: .trailing) {
-                    Button(action: {
-                        dismiss()
-                    }, label: {
-                        Image(systemName: "arrow.backward.square.fill")
-                            .foregroundColor(.white)
-                            .font(.system(size: 40))
-                    })
-                }
+//                VStack(alignment: .trailing) {
+//                    Button(action: {
+//                        dismiss()
+//                    }, label: {
+//                        Image(systemName: "arrow.backward.square.fill")
+//                            .foregroundColor(.white)
+//                            .font(.system(size: 40))
+//                    })
+//                }
             }
             .ignoresSafeArea(.all)
             .frame(height: 120)

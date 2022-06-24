@@ -12,6 +12,8 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         VStack {
             VStack {
@@ -37,7 +39,9 @@ struct LoginView: View {
                     }
                 }
                 .padding(.bottom, 40)
-                Button(action: {}, label: {
+                Button(action: {
+                    viewModel.login(withEmail: email, password: password)
+                }, label: {
                     Text("로그인")
                         .foregroundColor(.white)
                         .frame(width: UIScreen.main.bounds.height / 3)

@@ -13,6 +13,8 @@ struct RegistrationView: View {
     @State private var password = ""
     @State private var userName = ""
     @State private var fullName = ""
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         VStack {
@@ -26,7 +28,9 @@ struct RegistrationView: View {
             }
             .font(.system(size: 30))
             
-            Button(action: {}, label: {
+            Button(action: {
+                viewModel.register(withEmail: email, password: password, fullName: fullName, userName: userName)
+            }, label: {
                 Text("회원가입")
                     .font(.system(size: 30))
                     .foregroundColor(.white)
@@ -36,7 +40,9 @@ struct RegistrationView: View {
             .background(.blue)
             .cornerRadius(20)
             Spacer()
-            Button(action: {}, label: {
+            Button(action: {
+                dismiss()
+            }, label: {
                 Text("계정 있음. 로그인 하기")
             })
             
