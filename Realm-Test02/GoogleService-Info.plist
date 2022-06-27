@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>85499482524-l8d8bgj6nmgbf7ob207hkmn3dgm8p61j.apps.googleusercontent.com</string>
+	<string>283608710721-6cgds1v1ciqcot8m2qhuje0tqm5lludl.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.85499482524-l8d8bgj6nmgbf7ob207hkmn3dgm8p61j</string>
+	<string>com.googleusercontent.apps.283608710721-6cgds1v1ciqcot8m2qhuje0tqm5lludl</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAaUkeSnd9dGLhBDaXTV85LlMc-S9CYuBI</string>
+	<string>AIzaSyAs0GnuxRwFue58oRzgCboUMwWMS07GDbw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>85499482524</string>
+	<string>283608710721</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.moolman.sns-chat-app</string>
+	<string>com.moolman.Realm-Test02</string>
 	<key>PROJECT_ID</key>
-	<string>sns-chat-app-acebc</string>
+	<string>tweet-firebase-aws</string>
 	<key>STORAGE_BUCKET</key>
-	<string>sns-chat-app-acebc.appspot.com</string>
+	<string>tweet-firebase-aws.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:85499482524:ios:b84aae095f979a052d7859</string>
+	<string>1:283608710721:ios:110e97d6af49163e1010c0</string>
 </dict>
 </plist>

@@ -11,8 +11,8 @@ struct RegistrationView: View {
     
     @State private var email = ""
     @State private var password = ""
-    @State private var userName = ""
-    @State private var fullName = ""
+    @State private var username = ""
+    @State private var fullname = ""
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: AuthViewModel
     
@@ -22,14 +22,14 @@ struct RegistrationView: View {
             
             VStack {
                 CustomInputField(text: $email, imageName: "envelope", placeholderText: "이메일")
-                CustomInputField(text: $userName, imageName: "person", placeholderText: "닉네임")
-                CustomInputField(text: $fullName, imageName: "person", placeholderText: "이름")
+                CustomInputField(text: $username, imageName: "person", placeholderText: "닉네임")
+                CustomInputField(text: $fullname, imageName: "person", placeholderText: "이름")
                 CustomInputField(text: $password, imageName: "lock", placeholderText: "비밀번호")
             }
             .font(.system(size: 30))
             
             Button(action: {
-                viewModel.register(withEmail: email, password: password, fullName: fullName, userName: userName)
+                viewModel.register(withEmail: email, password: password, fullname: fullname, username: username)
             }, label: {
                 Text("회원가입")
                     .font(.system(size: 30))

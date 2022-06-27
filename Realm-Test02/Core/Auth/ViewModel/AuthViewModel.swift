@@ -21,7 +21,41 @@ class AuthViewModel: ObservableObject {
     func login(withEmail email: String, password: String) {
         print("DEBUG: Login with email \(email)")
     }
-    func register(withEmail email: String, password: String, fullName: String, userName: String) {
-        print("DEBUG: Register with email \(email)")
+    
+    func register(withEmail email: String, password: String, fullname: String, username: String) {
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let user = result?.user else {
+                return
+            }
+            
+            print("print \(user)_")
+            self.userSession = user
+            
+            let data = [
+                "email" : email,
+                "fullname" : fullname,
+                "username" : username.lowercased(),
+                "uid" : user.uid
+            ]
+            Firestore.firestore().collection("users")
+                .document(user.uid)
+                .setData(data) { error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
+                }
+        }
+    }
+    
+    func logout() {
+        userSession = nil
+        
+        try? Auth.auth().signOut()
     }
 }

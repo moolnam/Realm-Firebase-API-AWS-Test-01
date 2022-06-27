@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		78921C812861EED50034ECA0 /* Realm_Test02App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78921C802861EED50034ECA0 /* Realm_Test02App.swift */; };
+		78921C812861EED50034ECA0 /* Realm_Test02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78921C802861EED50034ECA0 /* Realm_Test02.swift */; };
 		78921C832861EED50034ECA0 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78921C822861EED50034ECA0 /* ContentView2.swift */; };
 		78921C852861EED50034ECA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78921C842861EED50034ECA0 /* Assets.xcassets */; };
 		78921C882861EED50034ECA0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78921C872861EED50034ECA0 /* Preview Assets.xcassets */; };
@@ -21,12 +21,12 @@
 		78B7238C286597D300134112 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7238B286597D300134112 /* RegistrationView.swift */; };
 		78B7238E28659ED000134112 /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7238D28659ED000134112 /* CustomInputField.swift */; };
 		78B723912865ABB300134112 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B723902865ABB300134112 /* AuthHeaderView.swift */; };
-		78B7239328666EA500134112 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78B7239228666EA500134112 /* GoogleService-Info.plist */; };
 		78B7239628666F5500134112 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 78B7239528666F5500134112 /* FirebaseAuth */; };
 		78B7239828666F5500134112 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 78B7239728666F5500134112 /* FirebaseFirestore */; };
 		78B7239A28666F5500134112 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 78B7239928666F5500134112 /* FirebaseFirestoreSwift */; };
 		78B7239C28666F5500134112 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 78B7239B28666F5500134112 /* FirebaseStorage */; };
 		78B7239E286670F400134112 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7239D286670F400134112 /* AuthViewModel.swift */; };
+		78D0C03728682434008E1E5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78D0C03628682434008E1E5D /* GoogleService-Info.plist */; };
 		78D805652862DEAA00B5FE91 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D805642862DEAA00B5FE91 /* FeedView.swift */; };
 		78D805682862DFC600B5FE91 /* TweetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D805672862DFC600B5FE91 /* TweetRowView.swift */; };
 		78D8056B2862E6CE00B5FE91 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8056A2862E6CE00B5FE91 /* MainTabView.swift */; };
@@ -45,7 +45,7 @@
 
 /* Begin PBXFileReference section */
 		78921C7D2861EED50034ECA0 /* Realm-Test02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Realm-Test02.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		78921C802861EED50034ECA0 /* Realm_Test02App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm_Test02App.swift; sourceTree = "<group>"; };
+		78921C802861EED50034ECA0 /* Realm_Test02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm_Test02.swift; sourceTree = "<group>"; };
 		78921C822861EED50034ECA0 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		78921C842861EED50034ECA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78921C872861EED50034ECA0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -57,8 +57,8 @@
 		78B7238B286597D300134112 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		78B7238D28659ED000134112 /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		78B723902865ABB300134112 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
-		78B7239228666EA500134112 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78B7239D286670F400134112 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		78D0C03628682434008E1E5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78D805642862DEAA00B5FE91 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		78D805672862DFC600B5FE91 /* TweetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetRowView.swift; sourceTree = "<group>"; };
 		78D8056A2862E6CE00B5FE91 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -111,12 +111,12 @@
 		78921C7F2861EED50034ECA0 /* Realm-Test02 */ = {
 			isa = PBXGroup;
 			children = (
-				78921C802861EED50034ECA0 /* Realm_Test02App.swift */,
+				78921C802861EED50034ECA0 /* Realm_Test02.swift */,
 				78D8058C2864860A00B5FE91 /* ContentView.swift */,
 				78D8055E2862DE3500B5FE91 /* Realm */,
 				78D8055F2862DE6600B5FE91 /* Core */,
 				78921C842861EED50034ECA0 /* Assets.xcassets */,
-				78B7239228666EA500134112 /* GoogleService-Info.plist */,
+				78D0C03628682434008E1E5D /* GoogleService-Info.plist */,
 				78921C862861EED50034ECA0 /* Preview Content */,
 			);
 			path = "Realm-Test02";
@@ -439,7 +439,7 @@
 			files = (
 				78921C882861EED50034ECA0 /* Preview Assets.xcassets in Resources */,
 				78921C852861EED50034ECA0 /* Assets.xcassets in Resources */,
-				78B7239328666EA500134112 /* GoogleService-Info.plist in Resources */,
+				78D0C03728682434008E1E5D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +464,7 @@
 				78B7238C286597D300134112 /* RegistrationView.swift in Sources */,
 				78D8058928647F2400B5FE91 /* SideMenuViewModel.swift in Sources */,
 				78B723912865ABB300134112 /* AuthHeaderView.swift in Sources */,
-				78921C812861EED50034ECA0 /* Realm_Test02App.swift in Sources */,
+				78921C812861EED50034ECA0 /* Realm_Test02.swift in Sources */,
 				78D805712862E9A900B5FE91 /* ExploreView.swift in Sources */,
 				78D8058528647EDC00B5FE91 /* SideMenuView.swift in Sources */,
 				78B7238A286597A800134112 /* LoginView.swift in Sources */,
