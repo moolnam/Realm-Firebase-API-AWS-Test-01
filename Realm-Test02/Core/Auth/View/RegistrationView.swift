@@ -18,13 +18,16 @@ struct RegistrationView: View {
     
     var body: some View {
         VStack {
+            
+            NavigationLink("", destination: ProfilePhotoSelectorview(), isActive: $viewModel.didAuth)
+            
             AuthHeaderView(title1: "회원가입 화면", title2: "반갑습니다")
             
             VStack {
                 CustomInputField(text: $email, imageName: "envelope", placeholderText: "이메일")
                 CustomInputField(text: $username, imageName: "person", placeholderText: "닉네임")
                 CustomInputField(text: $fullname, imageName: "person", placeholderText: "이름")
-                CustomInputField(text: $password, imageName: "lock", placeholderText: "비밀번호")
+                CustomInputField(text: $password, imageName: "lock", placeholderText: "비밀번호", isSecureField: true)
             }
             .font(.system(size: 30))
             

@@ -26,7 +26,7 @@ struct LoginView: View {
                 VStack {
                     CustomInputField(text: $email, imageName: "envelope", placeholderText: "이메일")
                         
-                    CustomInputField(text: $password, imageName: "lock", placeholderText: "비밀번호")
+                    CustomInputField(text: $password, imageName: "lock", placeholderText: "비밀번호", isSecureField: true)
 //                    TextField("비밀번호", text: $password)
                 }
                 HStack {
