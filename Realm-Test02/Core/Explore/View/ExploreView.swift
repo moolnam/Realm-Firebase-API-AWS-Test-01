@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct ExploreView: View {
+    
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @ObservedObject var viewModel = ExploreViewModel()
+    
     var body: some View {
         VStack {
             ScrollView { 
                 LazyVStack {
-                    ForEach(0...20, id: \.self) { item in
+                    ForEach(viewModel.users) { item in
                         NavigationLink {
-//                            ProfileView()
-//                                .navigationBarHidden(true)
+                            ProfileView(user: item)
 
                         } label: {
-                            UserRowView()
+                            UserRowView(user: item)
                         }
                     }
                 }

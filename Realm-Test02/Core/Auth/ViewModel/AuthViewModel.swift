@@ -43,6 +43,7 @@ class AuthViewModel: ObservableObject {
             }
             
             self.userSession = user
+            self.fetchUser()
             // 로그인 되었을때 유저를 userSession 안에 넣는다.
         }
     }
@@ -90,6 +91,7 @@ class AuthViewModel: ObservableObject {
     
     func logout() {
         userSession = nil
+//        currentUser = nil
         // userSession 을 nil 로 만든다.
         try? Auth.auth().signOut()
         // 로그아웃 진행
@@ -105,6 +107,8 @@ class AuthViewModel: ObservableObject {
                 .document(uid)
                 .updateData(["profileImageUrl": urlImage]) { _ in
                     self.userSession = self.tempUserSession
+                    self.fetchUser()
+                    self.didAuth = false
                 }
         }
     }

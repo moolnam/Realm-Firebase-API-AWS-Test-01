@@ -20,7 +20,7 @@ struct SideMenuView: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: 80, height: 80)
-                        .clipShape(Circle())
+                        .cornerRadius(10)
                     Text("\(user.username)")
                         .fontWeight(.bold)
                     Text("\(user.fullname)")
