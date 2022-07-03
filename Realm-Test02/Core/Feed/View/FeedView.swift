@@ -25,9 +25,7 @@ struct FeedView: View {
                 print("새글쓰기 클릭")
             }, label: {
                 Image(systemName: "square.and.pencil")
-                    .resizable()
-                    .renderingMode(.template)
-                    .frame(width: 50, height: 50, alignment: .center)
+                    .font(.system(size: 50))
                     .padding()
             })
             .background(.white)

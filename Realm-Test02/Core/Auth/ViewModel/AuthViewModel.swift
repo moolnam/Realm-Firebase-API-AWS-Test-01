@@ -14,11 +14,16 @@ class AuthViewModel: ObservableObject {
     // 유저 현재 세션
     @Published var didAuth = false
     // 사진 업로드
+    @Published var currentUser: User?
+    //
     private var tempUserSession: FirebaseAuth.User?
+    // 안전 장치 userSession 안에 유저가 들어가기 전에 tempUserSession 에 유저가 먼저 들어간다.
+    private let service = UserService()
     
     init() {
         self.userSession = Auth.auth().currentUser
         // 초기화. 세션 안에 현재 유저 로그인 되어있는지 안되어 있는지
+        self.fetchUser()
         
         print("DEBUG: User session is \(String(describing: self.userSession))")
         // 초기화후 현재 로그인된 세션 있는지 없는지 로그.
@@ -101,6 +106,15 @@ class AuthViewModel: ObservableObject {
                 .updateData(["profileImageUrl": urlImage]) { _ in
                     self.userSession = self.tempUserSession
                 }
+        }
+    }
+    
+    func fetchUser() {
+        guard let uid = self.userSession?.uid else {
+            return
+        }
+        service.fetchUser(withUid: uid) { user in
+            self.currentUser = user
         }
     }
 }

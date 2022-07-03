@@ -14,7 +14,7 @@ struct ExploreView: View {
                 LazyVStack {
                     ForEach(0...20, id: \.self) { item in
                         NavigationLink {
-                            ProfileView()
+//                            ProfileView()
 //                                .navigationBarHidden(true)
 
                         } label: {

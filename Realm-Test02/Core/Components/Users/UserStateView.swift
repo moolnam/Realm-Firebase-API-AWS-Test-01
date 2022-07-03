@@ -12,6 +12,7 @@ struct UserStateView: View {
         HStack {
             HStack {
                 Text("234")
+                
                     .fontWeight(.bold)
                 Text("팔로워")
             }
@@ -21,6 +22,7 @@ struct UserStateView: View {
                 Text("팔로잉")
             }
         }
+        
     }
 }
 

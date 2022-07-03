@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		783FCCA1287125E30028B704 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783FCCA0287125E30028B704 /* UserService.swift */; };
+		783FCCA4287129B00028B704 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783FCCA3287129B00028B704 /* User.swift */; };
+		783FCCA7287134A10028B704 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 783FCCA6287134A10028B704 /* Kingfisher */; };
 		78921C812861EED50034ECA0 /* Realm_Test02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78921C802861EED50034ECA0 /* Realm_Test02.swift */; };
 		78921C832861EED50034ECA0 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78921C822861EED50034ECA0 /* ContentView2.swift */; };
 		78921C852861EED50034ECA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78921C842861EED50034ECA0 /* Assets.xcassets */; };
@@ -47,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		783FCCA0287125E30028B704 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		783FCCA3287129B00028B704 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		78921C7D2861EED50034ECA0 /* Realm-Test02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Realm-Test02.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78921C802861EED50034ECA0 /* Realm_Test02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm_Test02.swift; sourceTree = "<group>"; };
 		78921C822861EED50034ECA0 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 			files = (
 				78B7239A28666F5500134112 /* FirebaseFirestoreSwift in Frameworks */,
 				78921C922861F05B0034ECA0 /* RealmSwift in Frameworks */,
+				783FCCA7287134A10028B704 /* Kingfisher in Frameworks */,
 				78B7239828666F5500134112 /* FirebaseFirestore in Frameworks */,
 				78B7239628666F5500134112 /* FirebaseAuth in Frameworks */,
 				78921C902861F05B0034ECA0 /* Realm in Frameworks */,
@@ -98,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		783FCCA2287129A50028B704 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				783FCCA3287129B00028B704 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		78921C742861EED40034ECA0 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +134,7 @@
 				78D8055E2862DE3500B5FE91 /* Realm */,
 				78921C802861EED50034ECA0 /* Realm_Test02.swift */,
 				78D8058C2864860A00B5FE91 /* ContentView.swift */,
+				783FCCA2287129A50028B704 /* Model */,
 				78D0C03C286BDB11008E1E5D /* Utils */,
 				78D0C03F286EA851008E1E5D /* Service */,
 				78D8055F2862DE6600B5FE91 /* Core */,
@@ -209,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				78D0C040286EA86B008E1E5D /* ImageUpload.swift */,
+				783FCCA0287125E30028B704 /* UserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -415,6 +431,7 @@
 				78B7239728666F5500134112 /* FirebaseFirestore */,
 				78B7239928666F5500134112 /* FirebaseFirestoreSwift */,
 				78B7239B28666F5500134112 /* FirebaseStorage */,
+				783FCCA6287134A10028B704 /* Kingfisher */,
 			);
 			productName = "Realm-Test02";
 			productReference = 78921C7D2861EED50034ECA0 /* Realm-Test02.app */;
@@ -447,6 +464,7 @@
 			packageReferences = (
 				78921C8E2861F05B0034ECA0 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				78B7239428666F5400134112 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				783FCCA5287134A10028B704 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 78921C7E2861EED50034ECA0 /* Products */;
 			projectDirPath = "";
@@ -483,6 +501,7 @@
 				78D805752862E9CD00B5FE91 /* MessagesView.swift in Sources */,
 				78D8058728647F0800B5FE91 /* SideMenuRowView.swift in Sources */,
 				78D805652862DEAA00B5FE91 /* FeedView.swift in Sources */,
+				783FCCA4287129B00028B704 /* User.swift in Sources */,
 				78921C832861EED50034ECA0 /* ContentView2.swift in Sources */,
 				78B7238528658D7100134112 /* TextArea.swift in Sources */,
 				78921C942861F06F0034ECA0 /* Country.swift in Sources */,
@@ -491,6 +510,7 @@
 				78D8056B2862E6CE00B5FE91 /* MainTabView.swift in Sources */,
 				78B7238C286597D300134112 /* RegistrationView.swift in Sources */,
 				78D8058928647F2400B5FE91 /* SideMenuViewModel.swift in Sources */,
+				783FCCA1287125E30028B704 /* UserService.swift in Sources */,
 				78B723912865ABB300134112 /* AuthHeaderView.swift in Sources */,
 				78921C812861EED50034ECA0 /* Realm_Test02.swift in Sources */,
 				78D805712862E9A900B5FE91 /* ExploreView.swift in Sources */,
@@ -705,6 +725,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		783FCCA5287134A10028B704 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		78921C8E2861F05B0034ECA0 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -724,6 +752,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		783FCCA6287134A10028B704 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 783FCCA5287134A10028B704 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		78921C8F2861F05B0034ECA0 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 78921C8E2861F05B0034ECA0 /* XCRemoteSwiftPackageReference "realm-swift" */;

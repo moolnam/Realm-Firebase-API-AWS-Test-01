@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfileView: View {
     
     @State var selectedFilter: TweetFilterViewModel = .tweets
     @Namespace var animation
     @Environment(\.dismiss) var dismiss
+    private let user: User
+    
+    init(user: User) {
+        self.user = user
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -28,7 +34,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(user: User(id: NSUUID().uuidString, username: "username", fullname: "fullname", profileImageUrl: "profileimage", email: "email"))
             .previewLayout(.sizeThatFits)
     }
 }
@@ -38,21 +44,11 @@ extension ProfileView {
         VStack {
             ZStack(alignment: .bottomLeading) {
                 Color.blue.opacity(0.5)
-                Image(systemName: "person.circle.fill")
-                    .background(.green)
+                KFImage(URL(string: user.profileImageUrl))
+                    .resizable()
                     .cornerRadius(20)
-                    .foregroundColor(.white)
-                    .font(.system(size: 100))
-                    .offset(x: 30, y: 50)
-//                VStack(alignment: .trailing) {
-//                    Button(action: {
-//                        dismiss()
-//                    }, label: {
-//                        Image(systemName: "arrow.backward.square.fill")
-//                            .foregroundColor(.white)
-//                            .font(.system(size: 40))
-//                    })
-//                }
+                    .frame(width: 150, height: 150)
+                    .offset(x: 30, y: 30)
             }
             .ignoresSafeArea(.all)
             .frame(height: 120)
@@ -73,10 +69,10 @@ extension ProfileView {
                 .foregroundColor(.green)
                 .font(.system(size: 20))
                 VStack(alignment: .leading) {
-                    Text("MOOL MAN")
+                    Text("\(user.fullname)")
                         .font(.title)
                         .bold()
-                    Text("@moolman")
+                    Text("@\(user.username)")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     Text("자기소개")

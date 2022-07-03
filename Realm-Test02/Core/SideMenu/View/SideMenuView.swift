@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct SideMenuView: View {
     
@@ -13,9 +14,59 @@ struct SideMenuView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            sideTopMenu
+            if let user = authViewModel.currentUser {
+                VStack(alignment: .leading) {
+                    KFImage(URL(string: user.profileImageUrl))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 80, height: 80)
+                        .clipShape(Circle())
+                    Text("\(user.username)")
+                        .fontWeight(.bold)
+                    Text("\(user.fullname)")
+                        .font(.subheadline)
+                        .padding(.bottom, 20)
+                    UserStateView()
+                }
+                .padding()
+                VStack(alignment: .leading) {
+                    ForEach(SideMenuViewModel.allCases, id: \.rawValue) { item in
+                        if item == .profile {
+                            NavigationLink {
+                                ProfileView(user: user)
+                            } label: {
+                                SideMenuRowView(viewModel: item)
+                            }
+                        }
+                        else if item == .lists {
+                            NavigationLink {
+                                
+                            } label: {
+                                SideMenuRowView(viewModel: item)
+                            }
+                        }
+                        else if item == .bookmarks {
+                            NavigationLink {
+                                
+                            } label: {
+                                SideMenuRowView(viewModel: item)
+                            }
+                        }
+                        else if item == .logout {
+                            Button(action: {
+                                print("로그아웃 버튼 누름")
+                                authViewModel.logout()
+                            }, label: {
+                                SideMenuRowView(viewModel: item)
+                            })
+                        }
+                        else {
+                            SideMenuRowView(viewModel: item)
+                        }
+                    }
+                }
+            }
             
-            sideMenuButtom
             
             Spacer()
         }
@@ -32,59 +83,5 @@ struct SideMenuView_Previews: PreviewProvider {
 }
 
 
-extension SideMenuView {
-    var sideTopMenu: some View {
-        VStack(alignment: .leading) {
-            Image(systemName: "person.circle")
-                .font(.system(size: 50))
-            Text("User Name")
-                .fontWeight(.bold)
-            Text("moolman")
-                .font(.subheadline)
-                .padding(.bottom, 20)
-            UserStateView()
-        }
-        .padding()
-        
-    }
-    
-    var sideMenuButtom: some View {
-        VStack(alignment: .leading) {
-            ForEach(SideMenuViewModel.allCases, id: \.rawValue) { item in
-                if item == .profile {
-                    NavigationLink {
-                        ProfileView()
-                    } label: {
-                        SideMenuRowView(viewModel: item)
-                    }
-                }
-                else if item == .lists {
-                    NavigationLink {
-                        
-                    } label: {
-                        SideMenuRowView(viewModel: item)
-                    }
-                }
-                else if item == .bookmarks {
-                    NavigationLink {
-                        
-                    } label: {
-                        SideMenuRowView(viewModel: item)
-                    }
-                }
-                else if item == .logout {
-                    Button(action: {
-                        print("로그아웃 버튼 누름")
-                        authViewModel.logout()
-                    }, label: {
-                        SideMenuRowView(viewModel: item)
-                    })
-                }
-                else {
-                    SideMenuRowView(viewModel: item)
-                }
-            }
-        }
-    }
-}
+
 
