@@ -11,6 +11,7 @@
 		783FCCA4287129B00028B704 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783FCCA3287129B00028B704 /* User.swift */; };
 		783FCCA7287134A10028B704 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 783FCCA6287134A10028B704 /* Kingfisher */; };
 		7868A763287156A600897D66 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7868A762287156A600897D66 /* ExploreViewModel.swift */; };
+		787F69E1287171820072B517 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F69E0287171820072B517 /* SearchBar.swift */; };
 		78921C812861EED50034ECA0 /* Realm_Test02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78921C802861EED50034ECA0 /* Realm_Test02.swift */; };
 		78921C832861EED50034ECA0 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78921C822861EED50034ECA0 /* ContentView2.swift */; };
 		78921C852861EED50034ECA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78921C842861EED50034ECA0 /* Assets.xcassets */; };
@@ -19,6 +20,8 @@
 		78921C922861F05B0034ECA0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 78921C912861F05B0034ECA0 /* RealmSwift */; };
 		78921C942861F06F0034ECA0 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78921C932861F06F0034ECA0 /* Country.swift */; };
 		78921C962861F0C20034ECA0 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78921C952861F0C20034ECA0 /* City.swift */; };
+		7893B6D82872FB490032CD92 /* TweetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7893B6D72872FB490032CD92 /* TweetService.swift */; };
+		7893B6DA2872FE680032CD92 /* TweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7893B6D92872FE680032CD92 /* TweetViewModel.swift */; };
 		78B7238328658B1200134112 /* UploadTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7238228658B1200134112 /* UploadTweetView.swift */; };
 		78B7238528658D7100134112 /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7238428658D7100134112 /* TextArea.swift */; };
 		78B7238A286597A800134112 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B72389286597A800134112 /* LoginView.swift */; };
@@ -54,6 +57,7 @@
 		783FCCA0287125E30028B704 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		783FCCA3287129B00028B704 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7868A762287156A600897D66 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		787F69E0287171820072B517 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		78921C7D2861EED50034ECA0 /* Realm-Test02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Realm-Test02.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78921C802861EED50034ECA0 /* Realm_Test02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm_Test02.swift; sourceTree = "<group>"; };
 		78921C822861EED50034ECA0 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 		78921C872861EED50034ECA0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		78921C932861F06F0034ECA0 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		78921C952861F0C20034ECA0 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		7893B6D72872FB490032CD92 /* TweetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetService.swift; sourceTree = "<group>"; };
+		7893B6D92872FE680032CD92 /* TweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewModel.swift; sourceTree = "<group>"; };
 		78B7238228658B1200134112 /* UploadTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTweetView.swift; sourceTree = "<group>"; };
 		78B7238428658D7100134112 /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
 		78B72389286597A800134112 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 		78B7238128658AFB00134112 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7893B6D92872FE680032CD92 /* TweetViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -227,6 +234,7 @@
 			children = (
 				78D0C040286EA86B008E1E5D /* ImageUpload.swift */,
 				783FCCA0287125E30028B704 /* UserService.swift */,
+				7893B6D72872FB490032CD92 /* TweetService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -298,6 +306,7 @@
 				78D805672862DFC600B5FE91 /* TweetRowView.swift */,
 				78B7238428658D7100134112 /* TextArea.swift */,
 				78B7238D28659ED000134112 /* CustomInputField.swift */,
+				787F69E0287171820072B517 /* SearchBar.swift */,
 			);
 			path = Tweets;
 			sourceTree = "<group>";
@@ -504,9 +513,11 @@
 				78D805752862E9CD00B5FE91 /* MessagesView.swift in Sources */,
 				78D8058728647F0800B5FE91 /* SideMenuRowView.swift in Sources */,
 				78D805652862DEAA00B5FE91 /* FeedView.swift in Sources */,
+				7893B6DA2872FE680032CD92 /* TweetViewModel.swift in Sources */,
 				783FCCA4287129B00028B704 /* User.swift in Sources */,
 				78921C832861EED50034ECA0 /* ContentView2.swift in Sources */,
 				78B7238528658D7100134112 /* TextArea.swift in Sources */,
+				7893B6D82872FB490032CD92 /* TweetService.swift in Sources */,
 				78921C942861F06F0034ECA0 /* Country.swift in Sources */,
 				78921C962861F0C20034ECA0 /* City.swift in Sources */,
 				78D0C039286BD294008E1E5D /* ProfilePhotoSelectorview.swift in Sources */,
@@ -517,6 +528,7 @@
 				78B723912865ABB300134112 /* AuthHeaderView.swift in Sources */,
 				78921C812861EED50034ECA0 /* Realm_Test02.swift in Sources */,
 				78D805712862E9A900B5FE91 /* ExploreView.swift in Sources */,
+				787F69E1287171820072B517 /* SearchBar.swift in Sources */,
 				78D8058528647EDC00B5FE91 /* SideMenuView.swift in Sources */,
 				7868A763287156A600897D66 /* ExploreViewModel.swift in Sources */,
 				78B7238A286597A800134112 /* LoginView.swift in Sources */,

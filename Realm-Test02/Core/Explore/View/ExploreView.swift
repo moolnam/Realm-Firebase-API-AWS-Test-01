@@ -9,14 +9,17 @@ import SwiftUI
 
 struct ExploreView: View {
     
-    @EnvironmentObject var authViewModel: AuthViewModel
     @ObservedObject var viewModel = ExploreViewModel()
+    
+    
     
     var body: some View {
         VStack {
+            SearchBar(text: $viewModel.searchText)
+                .padding()
             ScrollView { 
                 LazyVStack {
-                    ForEach(viewModel.users) { item in
+                    ForEach(viewModel.searchableUsers) { item in
                         NavigationLink {
                             ProfileView(user: item)
 
@@ -27,7 +30,6 @@ struct ExploreView: View {
                 }
             }
         }
-//        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

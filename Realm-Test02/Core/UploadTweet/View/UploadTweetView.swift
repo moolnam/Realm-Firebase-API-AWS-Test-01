@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct UploadTweetView: View {
     
-    @State var textFeild = ""
+    @State private var caption = ""
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @ObservedObject var viewModel = TweetViewModel()
+    
     
     var body: some View {
         VStack {
@@ -23,20 +27,40 @@ struct UploadTweetView: View {
                 })
                 Spacer()
                 Button(action: {
-                    print("업로드 클릭")
+                    self.viewModel.uploadTweet(withCaption: caption)
                 }, label: {
                     Text("업로드")
+                        .font(.headline)
+                        .padding(.all, 10)
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .cornerRadius(10)
                 })
             }
             .padding(.horizontal, 30)
+            .padding(.vertical, 10)
             HStack(alignment: .top) {
-                Image(systemName: "person.circle")
-                    .font(.system(size: 50))
-                TextArea("포스트 입력", text: $textFeild)
+                if let user = authViewModel.currentUser {
+                    KFImage(URL(string: user.profileImageUrl))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                }
+                else {
+                    Image(systemName: "person.circle.fill")
+                        .font(.system(size: 50))
+                }
+                TextArea("포스트 입력", text: $caption)
 //                TextField("포스트 입력", text: $textFeild)
             }
             .padding(.horizontal, 30)
             Spacer()
+        }
+        .onReceive(viewModel.$didUploadTweet) { success in
+            if success {
+                dismiss()
+            }
         }
     }
 }
