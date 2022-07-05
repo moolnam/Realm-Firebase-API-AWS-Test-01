@@ -139,7 +139,7 @@ extension ProfileView {
         ScrollView {
             LazyVStack {
                 ForEach(0...9, id: \.self) { item in
-                    TweetRowView()
+//                    TweetRowView()
                 }
             }
         }

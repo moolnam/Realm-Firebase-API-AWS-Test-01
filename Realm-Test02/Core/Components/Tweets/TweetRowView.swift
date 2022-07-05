@@ -6,27 +6,40 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TweetRowView: View {
+    
+    let tweet: Tweet
+    
     var body: some View {
         VStack(alignment: .leading) {
-            HStack(alignment: .top, spacing: 20) {
-                Image(systemName: "person.circle.fill")
-                    .font(.system(size: 50))
-                    .foregroundColor(.blue)
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("MOOL MAN")
-                            .fontWeight(.bold)
-                        Text("06/22/14:43")
-                            .foregroundColor(.secondary)
+            if let user = tweet.user {
+                HStack(alignment: .top, spacing: 20) {
+                    KFImage(URL(string: user.profileImageUrl))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 50, height: 50)
+                        .cornerRadius(10)
+                    VStack(alignment: .leading) {
+                        HStack {
+                            VStack(alignment: .leading){
+                                Text("\(user.fullname)")
+                                    .fontWeight(.bold)
+                                Text("\(user.username)")
+                                    .font(.caption2)
+                                    .foregroundColor(.secondary)
+                            }
+                            Text("\(tweet.timestamp)")
+                                .foregroundColor(.secondary)
+                        }
+                        .padding(.bottom, 5)
+                        Text("\(tweet.caption)")
                     }
-                    .padding(.bottom, 5)
-                    Text("안녕하세요 물질하는 남자")
+                    Spacer()
                 }
-                Spacer()
+                .padding(.bottom, 30)
             }
-            .padding(.bottom, 30)
             HStack {
                 
                 Button(action: {}, label: {
@@ -51,6 +64,7 @@ struct TweetRowView: View {
             .foregroundColor(.blue)
             Divider()
         }
+        
         .padding()
         .background(.cyan.opacity(0.5))
         .cornerRadius(10)
@@ -58,9 +72,9 @@ struct TweetRowView: View {
     }
 }
 
-struct TweetRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        TweetRowView()
-            .previewLayout(.sizeThatFits)
-    }
-}
+//struct TweetRowView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TweetRowView()
+//            .previewLayout(.sizeThatFits)
+//    }
+//}
