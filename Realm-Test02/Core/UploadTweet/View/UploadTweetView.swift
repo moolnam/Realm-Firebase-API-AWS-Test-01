@@ -14,8 +14,7 @@ struct UploadTweetView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var authViewModel: AuthViewModel
     @ObservedObject var viewModel = TweetViewModel()
-    
-    
+
     var body: some View {
         VStack {
             HStack {

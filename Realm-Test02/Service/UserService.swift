@@ -10,6 +10,7 @@ import FirebaseFirestoreSwift
 
 struct UserService {
     func fetchUser(withUid uid: String, completion: @escaping(User) -> Void) {
+        // uid 계정 가져오기
         print("DEBUG: Fetch User Info...")
         Firestore.firestore().collection("users")
             .document(uid)
@@ -36,7 +37,7 @@ struct UserService {
     }
     
     func fetchUsers(completion: @escaping([User]) -> Void) {
-        
+        // 유저 목록 가져오기
 //        var users = [User]()
         Firestore.firestore().collection("users")
             .getDocuments { snapshot, error in

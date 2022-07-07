@@ -10,11 +10,15 @@ import Kingfisher
 
 struct TweetRowView: View {
     
-    let tweet: Tweet
+    @ObservedObject var viewModel: TweetRowViewModel
+    
+    init(tweet: Tweet) {
+        self.viewModel = TweetRowViewModel(tweet: tweet)
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
-            if let user = tweet.user {
+            if let user = viewModel.tweet.user {
                 HStack(alignment: .top, spacing: 20) {
                     KFImage(URL(string: user.profileImageUrl))
                         .resizable()
@@ -30,11 +34,12 @@ struct TweetRowView: View {
                                     .font(.caption2)
                                     .foregroundColor(.secondary)
                             }
-                            Text("\(tweet.timestamp)")
+                            Spacer()
+                            Text("date")
                                 .foregroundColor(.secondary)
                         }
                         .padding(.bottom, 5)
-                        Text("\(tweet.caption)")
+                        Text("\(viewModel.tweet.caption)")
                     }
                     Spacer()
                 }
@@ -50,8 +55,11 @@ struct TweetRowView: View {
                     Image(systemName: "square.and.arrow.up.on.square")
                 })
                 Spacer()
-                Button(action: {}, label: {
-                    Image(systemName: "heart.square")
+                Button(action: {
+                    self.viewModel.likeTweet()
+                }, label: {
+                    Image(systemName: viewModel.tweet.didlike ?? false ? "heart.fill" : "heart")
+                        .foregroundColor(viewModel.tweet.didlike ?? false ? Color.red : Color.blue)
                 })
                 Spacer()
                 Button(action: {}, label: {

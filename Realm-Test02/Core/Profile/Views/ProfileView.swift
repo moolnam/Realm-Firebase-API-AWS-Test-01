@@ -13,10 +13,10 @@ struct ProfileView: View {
     @State var selectedFilter: TweetFilterViewModel = .tweets
     @Namespace var animation
     @Environment(\.dismiss) var dismiss
-    private let user: User
+    @ObservedObject var viewModel: ProgileViewModel
     
     init(user: User) {
-        self.user = user
+        self.viewModel = ProgileViewModel(user: user)
     }
     
     var body: some View {
@@ -44,7 +44,7 @@ extension ProfileView {
         VStack {
             ZStack(alignment: .bottomLeading) {
                 Color.blue.opacity(0.5)
-                KFImage(URL(string: user.profileImageUrl))
+                KFImage(URL(string: viewModel.user.profileImageUrl))
                     .resizable()
                     .cornerRadius(20)
                     .frame(width: 150, height: 150)
@@ -69,10 +69,10 @@ extension ProfileView {
                 .foregroundColor(.green)
                 .font(.system(size: 20))
                 VStack(alignment: .leading) {
-                    Text("\(user.fullname)")
+                    Text("\(viewModel.user.fullname)")
                         .font(.title)
                         .bold()
-                    Text("@\(user.username)")
+                    Text("@\(viewModel.user.username)")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     Text("자기소개")
@@ -138,8 +138,8 @@ extension ProfileView {
     var tweetView: some View {
         ScrollView {
             LazyVStack {
-                ForEach(0...9, id: \.self) { item in
-//                    TweetRowView()
+                ForEach(viewModel.tweets) { item in
+                    TweetRowView(tweet: item)
                 }
             }
         }
